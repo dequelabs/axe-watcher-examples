@@ -1,0 +1,34 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    open-pull-requests-limit: 15
+    commit-message:
+      prefix: 'chore'
+    registries:
+      - 'npm-agora'
+    ignore:
+      # ESM-only packages
+      - dependency-name: 'chai'
+        versions: ['>=5.0.0']
+    groups:
+      # Each test framework gets its own group. Dependabot matches groups in-order,
+      # so this ensures that they get their own PRs instead of being grouped in the low-risk
+      # one.
+      cypress:
+        patterns: ['cypress']
+      playwright:
+        patterns: ['playwright', 'playwright-core', '@playwright/*']
+      puppeteer:
+        patterns: ['puppeteer', 'puppeteer-core']
+      webdriverio:
+        patterns: ['webdriverio', 'wdio/*']
+      webdriverjs:
+        patterns: ['selenium-webdriver', '@types/selenium-webdriver']
+      # Any updates not caught by this final group config will get individual PRs
+      npm-low-risk:
+        update-types:
+          - 'minor'
+          - 'patch'
