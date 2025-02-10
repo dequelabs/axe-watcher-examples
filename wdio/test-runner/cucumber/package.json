@@ -1,0 +1,15 @@
+{
+  "name": "wdio-testrunner-cucumber",
+  "description": "WDIO Testrunner Cucumber @axe-core/watcher example",
+  "private": true,
+  "scripts": {
+    "test": "wdio run ./wdio.conf.ts"
+  },
+  "devDependencies": {
+    "@axe-core/watcher": "^3.19.0",
+    "@wdio/cli": "^9.8.0",
+    "@wdio/cucumber-framework": "^9.7.3",
+    "@wdio/local-runner": "^9.8.0",
+    "@wdio/spec-reporter": "^9.8.0"
+  }
+}

@@ -44,6 +44,7 @@ jobs:
           - directory: puppeteer/basic
           - directory: puppeteer/typescript-multi-page
           - directory: wdio/test-runner/typescript
+          - directory: wdio/test-runner/cucumber
           - directory: wdio/typescript-multi-page
           - directory: wdio/v7/typescript-basic
             # WDIO v7 does not work on Node > 16. Please refer to `setup.ts` for more information.
